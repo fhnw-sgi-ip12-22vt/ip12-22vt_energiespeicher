@@ -1,0 +1,147 @@
+[[section-concepts]]
+==	Querschnittliche Konzepte
+
+[role="arc42help"]
+****
+Die Querschnittlichen Konzepte geben einen Überblick über grundlegende Konzepten und deren Einfluss, welche für das System und dessen Funktionalität relevant und essenziell sind.
+****
+
+=== MVC (Model-View-Controller)
+
+****
+Durch unsere Rahmenbedingungen haben wir uns mit dem Kunden auf das MVC Prinzip für unser Projekt entschieden. Dieses Prinzip bietet einige Vorteile. Zum einen ist es sehr gut strukturiert und übersichtlich. Zum anderen ist es sehr gut erweiterbar und wartbar. Durch die Trennung von Model, View und Controller ist es möglich, dass mehrere Entwickler gleichzeitig an verschiedenen Teilen des Projekts arbeiten können. Durch die Trennung ist es auch möglich, dass die einzelnen Teile ausgetauscht werden können, ohne dass die anderen Teile davon betroffen sind.
+
+image::mvc_diagram.png["Übersicht unserer MVC Struktur"]
+****
+==== Model
+****
+Im Model werden die wichtigsten Langzeitdaten für CoE gespeichert. Unter anderem sind dies die Potentiometerwerte, aktuelle Punktestände, der Highscore und der Tagescounter.
+****
+
+==== View
+****
+Die View ist für die Darstellung der Daten zuständig. Die View ist in CoE in zwei Teile aufgeteilt. Zum einen gibt es die View für die Darstellung der Daten auf dem Display. Zum anderen gibt es die View für die Darstellung der Daten auf dem LED-Strip.
+
+Zur View gehört auch unsere PhysicalUI Klasse. Diese Klasse ist Zuständig für das Abfangen der Input Daten der Spieler. (Knöpfe & Potentiometer)
+****
+
+==== Controller
+****
+In CoE werden 3 Controller verwendet.
+
+.Controlleraufgaben
+|===
+|Controller | Aufgabe
+
+|GameController
+|Kommunikation mit dem Spiel und den Inputs
+|ScreenController
+|Kommunikation mit dem Display
+|LedController
+|Kommunikation mit dem LED-Strip
+|===
+****
+
+=== Punkteberechnung
+****
+Die Punkteberechnung ist eine Funktion, die je nach Energiespeicherung des Spielers eine bestimmte Anzahl an Punkten vergibt. Wenn der Spieler seine Energiespeicherung optimiert, bekommt er mehr Punkte.
+
+Die Funktion ist in zwei Teile aufgeteilt:
+
+Die Energiespeicherung des Spielers ist *grösser* als die optimale Energiespeicherung: +
+Es wird eine lineare Funktion verwendet, um die Punktzahl zu berechnen. Die Basispunktzahl liegt bei 2777 Punkten pro Durchlauf. *Pro 1000 kWH Unterschied gibt es 200 Punkte weniger.*
+
+[stem]
+++++
+Punkte = 2777 - (1/5) * x
+++++
+
+image::punkteverteilung_verfahren1.png["Grafische Darstellung des Verfahrens 1"]
+
+x ist die Differenz zwischen der Energiespeicherung des Spielers und der optimalen Energiespeicherung.
+
+.Beispielwerte der Punkteberechnung
+|===
+|Optimale Speicherung (a) | Effektive Speicherung (b) | x | Punkte
+
+|7000
+|8000
+|1000
+|2577
+|7000
+|9000
+|2000
+|2377
+|7000
+|10000
+|3000
+|2177
+|===
+
+Die Energiespeicherung des Spielers ist *kleiner* als die optimale Energiespeicherung: +
+Wenn die aktuelle Energiespeicherung des Spielers niedriger ist als die optimale Energiespeicherung, dann wird eine exponentielle Funktion verwendet, um die Punktzahl zu berechnen. Die Anzahl der Punkte hängt von der Differenz zwischen der optimalen und der aktuellen Energiespeicherung ab, und je größer diese Differenz ist, desto weniger Punkte erhält der Spieler.
+
+[stem]
+++++
+Punkte = 2777 - ((x * (x + 5)) * 100)
+++++
+
+
+x ist die Differenz zwischen der Energiespeicherung des Spielers und der optimalen Energiespeicherung / 1000.
+
+.Beispielwerte der Punkteberechnung
+|===
+|Optimale Speicherung (a) | Effektive Speicherung (b) | x = (a-b)/1000 | Punkte
+
+|7000
+|6000
+|1
+|2177
+|7000
+|5000
+|2
+|1377
+|7000
+|4000
+|3
+|377
+|===
+
+Es ist sichtbar das der Abfall der Punkte pro 1000kwH Unterschied in der Speicherung in einem bestimmten Rythmus passiert.
+
+.Rythmus der Punkteabzüge
+|===
+|Unterschied kwH | Punkteabzug
+
+|1000
+|1*6*100 = 600
+|2000
+|2*7*100 = 1400
+|3000
+|3*8*100 = 2400
+|===
+
+Mit der Unterschiedlichen Berechnung wird der Spieler dafür bestraft, wenn er zu wenig Energie speichert.
+****
+=== Energieverbrauch
+****
+Damit das Spiel überhaupt eine realistische Logik hat, gibt es bei uns die Klasse EnergyUsageInitializer. Diese Klasse ist nur dafür zuständig, dass die Energieverbrauchswerte für die Spielenden generiert wird.
+
+image::energyusageclass.png["Klasse EnergyUsageInitializer UML Diagramm"]
+
+Die Klasse hat eine Methode 'initEnergyUsageArray', die ein Array mit vordefinierten Energieverbrauchswerten für jede Spielstunde zurückgibt. Dies ist eine statische Methode, damit der Array nur ein einziges Mal generiert wird.
+
+image::energyarray.png["Grafische Darstellung des Energieverbrauches eines Tages",640,480]
+
+Mithilfe dieser Grafik initialisieren wir für 24H eine Skala, wie stark der Energieverbrauch pro Stunde ist. (Sommerlinie)
+
+Die Klasse EnergyUsageInitializer bricht diese Skala nun zusammen auf die Anzahl unserer Stunden pro Tag im Spiel. Umso schneller ein Tag vergeht, umso mehr Stunden werden zusammen addiert und dann der Durchschnitt eruiert.
+****
+
+=== Setting Klasse
+
+****
+Unsere Settings Klasse ist eine Utility Klasse. Dies ist eine Sammlung von statischen Methoden, die für das Spiel benötigt werden. Die Klasse kann nicht Instanziert werden. Der Hauptzweck dieser Klasse ist, um bestimmte Spieleinstellungen definieren zu können. Diese Einstellungen bestimmen schlussendlich, wie der Schwierigkeitsgrad des Spiels ist.
+
+image::settingclass.png["Klasse Settings UML Diagramm"]
+****

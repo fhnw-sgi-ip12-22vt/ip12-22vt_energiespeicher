@@ -1,0 +1,20 @@
+[[section-runtime-view]]
+==	Laufzeitsicht
+
+[role="arc42help"]
+****
+Die Laufzeitsicht gibt einen Überblick über konkrete Abläufe und Beziehungen zwischen den Komponenten in Form von Szenarien.
+****
+
+=== Gewinner ermitteln
+
+****
+Es gibt Zwei Arten wie das Spiel beendet wird. Die erste Variation ist, wenn der Tagescount die maximale Spiellänge, definiert in unserer Konfigurationsklasse, erreicht hat. Die Zweite Variation überprüft auf die Anzahl Fehler, welche ein Spieler besitzt. Hat ein Spieler mehr als die Maximale Anzahl der Verwarnungen, so hat dieser Verloren. Dabei wird die Punktzahl ignoriert.
+
+Die folgende Grafik erklärt unsere gameOver() Methode, welche einen Gewinner ermittelt.
+****
+image::gameOver_activitydiagram.png["Aktivitätsdiagramm der gameOver Methode"]
+
+
+// Dauer der Events, Einfluss Setting klasse
+=== Events

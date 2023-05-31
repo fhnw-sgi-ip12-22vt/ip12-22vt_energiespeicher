@@ -1,0 +1,52 @@
+[[section-architecture-technology]]
+=== Verwendete Technologien und Tools
+
+[role="arc42help"]
+****
+In diesem Abschnitt werden die verschiedenen Technologien und Tools beschrieben, die im Rahmen der Entwicklung des Systems verwendet wurden.
+
+Die Einigung für das Softwaremodell wurde zusammen mit unserem FHNW Kunden getroffen. Bezüglich der Codingconventions haben wir uns im Team für die von SonarLint ntschieden.
+****
+
+[cols="1,1" options="header"]
+|===
+| Tools | Beschreibung
+| IntelliJ IDEA | Verwendete IDE zur Programmierung
+| FreeCAD | Verwendetes CAD zur zeichnung der Platten
+|===
+
+[cols="1,1" options="header"]
+|===
+| Technologien | Beschreibung
+| Java 17 | Java ist eine Programmiersprache und Computerplattform.
+| JavaFX | JavaFX ist eine Open-Source-Client-Anwendungsplattform für Desktop-, mobile und eingebettete Systeme, die auf Java basiert.
+| Maven | Apache Maven ist ein Werkzeug zur Verwaltung und zum Verständnis von Softwareprojekten.
+| pi4j | Das Pi4J-Projekt hat es sich zur Aufgabe gemacht, eine umfangreiche und leistungsstarke, aber dennoch einfach zu bedienende, Java-freundliche API-Bibliothek bereitzustellen, die den programmatischen Zugriff auf die Low-Level-Hardware-I/O-Funktionen von Embedded-Plattformen wie dem Raspberry Pi erlaubt.
+|===
+
+[role="arc42help"]
+****
+*Getroffene Entscheidungen*
+
+Technologieentscheidungen Hardware:
+
+    * Potentiometer sind analog und mit Begrenzer um unendliches Drehen verhindern zu können.
+    * LED Strips anstatt einzelne LED's, da sie einfacher anzusteuern sind und kostengünstiger ausfallen.
+    * Kleine Screens sind kostengünstiger und der Fokus der Augen sollte nicht nur auf den Screens sein sondern auch auf dem Spielfeld sein.
+
+NOTE: Weitere Informationen zu der Hardware ist im Manual unter dem Kapitel Ressourcen zu finden.
+
+Technologieentscheidungen Software:
+
+    * Zusammen mit dem Kunden haben wir uns für das MVC-Pattern entschieden. https://www.geeksforgeeks.org/mvc-design-pattern/[MVC_Pattern]
+
+Diese Entscheidungen sind auch gut zu begründen
+[cols="1,1"]
+|===
+| Qualitätsziel | Entscheidung
+| Verständlich und Benutzerfreundlich | Der Fokus liegt auf physischem Spielfeld um unter anderem den Spielspass zu erhöhen. Kleine Monitore mit variablen Informationen sind Platzsparend und Kostengünstig.
+| Richtiges verarbeiten der Inputs | Analoge Potentiometer mit begrenzer, damit die Inputs nicht korrupt sein können und ewiges drehen verhindert wird.
+| Übersichtlicher Code | MVC-Modell für getrennte Aufgabenbereiche.
+|===
+
+****

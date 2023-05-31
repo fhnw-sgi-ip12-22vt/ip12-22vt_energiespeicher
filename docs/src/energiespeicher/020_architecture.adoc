@@ -1,0 +1,23 @@
+[[section-architecture]]
+== Architekturübersicht
+
+[role="arc42help"]
+****
+Die Architekturübersicht zeigt die verwendeten Technologien und Tools, sowie vorgegeben Randbedingungen und eine Übersicht über das System mit den Komponenten und die Grenzen.
+****
+
+// Randbedingungen
+include::022_architecture_constraints.adoc[]
+
+// Verwendete Technologien und Tools
+// Java, JavaFX
+// Potentiometer & Buttons (Verweis ins Manual)
+include::021_technology.adoc[]
+
+
+// Systemkontext und -grenzen
+include::023_system_scope_and_context.adoc[]
+
+
+// Übersicht über die Komponenten und deren Aufgaben
+include::024_components.adoc[]

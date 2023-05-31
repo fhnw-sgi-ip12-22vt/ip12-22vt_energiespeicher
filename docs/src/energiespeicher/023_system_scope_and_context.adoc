@@ -1,0 +1,40 @@
+[[section-architecture-system_scope_and_context]]
+=== Fachlicher Kontext
+
+****
+//TODO -> Diagramm
+image::fachlicherKontext.jpg["Übersicht über den Fachlichen Kontext"]
+
+**Menschlicher Spieler (Benutzer)**
+
+Clash of Energiespeicher wird zwischen zwei Gegnern gespielt, die gleichzeitig Inputs eingeben.
+
+**Zusätzliche Informationen (externe Website)**
+
+Mithilfe eines QR Codes gelangt man auf eine Website mit Informationen über die verwendeten Energiespeicher und über unser Projekt.
+****
+
+=== Technischer Kontext
+
+[role="arc42help"]
+****
+
+// TODO -> Diagramm
+image::technischerKontext.jpg["Übersicht über den Technischen Kontext"]
+
+**Potentiometer** +
+Durch drehen an den Potentiometer wird ein Eingabewert verändert.
+
+**Button** +
+Durch drücken der Buttons wird ein Event ausgeführt.
+
+**LED's** +
+Die LED's zeigen aktivierte Elemente an und geben Feedback über den Spielverlauf.
+
+**Text-Files** +
+In den Text-Files werden die Einstellungen, sowie die Highscores für das Spiel gespeichert.
+
+**Änderungen**
+Unser Spiel funktioniert im abgegebenen Zustand. Bei Änderungen garantieren wir nicht, dass das Spiel noch funktioniert.
+
+****

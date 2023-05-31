@@ -1,0 +1,54 @@
+[[section-introduction-and-goals]]
+==	Einführung und Ziele
+
+// Ziele des Dokumentes
+=== Ziele dieses Dokumentes
+[role="arc42help"]
+****
+Das Ziel dieses Dokuments ist es, unser System, die Schnittstellen und Komponenten für den Kunden zu erklären. Es soll eine Übersicht über die Architektur der Software geben, sowie die Funktionsweise und Zusammenhänge der einzelnen Komponenten beschreiben. Das Dokument dient als Grundlage für das Verständnis der Software und als Orientierung für mögliche Anpassungen und Erweiterungen in der Zukunft.
+****
+
+//Überblick über das System
+=== Überblick über das System
+[role="arc42help"]
+****
+Das Raspberry Pi wird über Eingaben von vier Potentiometer und zwei Buttons angesteuert und gibt Ausgaben auf LED’s und zwei Bildschirme aus. Zwei Spieler bedienen jeweils zwei Potentiometer und einen Button, welche die Ausgabe auf einem Bildschirm und dem Spielfeld beeinflussen. Anhand von Variablen und Algorithmen, wird nach Ablauf der Spielzeit oder durch zu viele Fehler ein Gewinner festgelegt.
+****
+
+//Qualitätsziele
+=== Qualitätsziele
+
+[role="arc42help"]
+[cols="1,1"]
+|===
+| Qualitätsziel | Motivation und Erläuterung
+| Verständlich und Benutzerfreundlich | Clash Of Energiespeicher ist einfach und intuitiv zu bedienen.
+| Erlernbarkeit | Das Konzept von unterschiedlichen Energiespeichern ist oberflächlich dem Spielenden bekannt.
+| Richtiges verarbeiten der Inputs (Interopabilität) | Das System muss mit dem Raspberry Pi und den I/O zusammenarbeiten können.
+| Schnelles Ausführen von Aktionen (Effizienz) | Da das Spiel ein 1v1 Spielmodus hat, müssen Aktionen des Gegners oder des Spieles rasch und mit geringer Latenz erfolgen.
+| Das Spiel ist sicher gegen Manipulationsversuche. (Sicherheit) | Der Punktestand kann nicht verfälscht werden. Es kann nur ein Event auf einmal aktiv sein.
+|===
+
+
+// Stakeholders
+=== Stakeholder
+
+[role="arc42help"]
+
+[cols="2,2" options="header"]
+|===
+|Rolle |Erwartungshaltung
+| Primeo
+
+Wolfgang Szabò
+(Leiter des Energie Kosmos)
+
+Corinne Gasser
+(stellvertretende Leiterin) | Von Ihnen stammt der ursprüngliche Auftrag. Sie erwarten die Einhaltung der Anforderungen wie haptische Elemente und Nachhaltigkeit.
+| Kunde
+
+Yves Simmen
+yves.simmen@fhnw.ch | Dient als “Vermittler” zwischen Primeo und dem Projektteam. Der Kunde möchte regelmässige Meldungen über den aktuellen Stand haben.
+| Jugendliche von Sekunderdarschulen | Sie erwarten ein spannendes und lehrreiches Spielerlebnis.
+Dabei möchten sie nicht viel lesen und lernen sondern direkt spielen können.
+|===

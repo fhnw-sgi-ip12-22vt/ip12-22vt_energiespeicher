@@ -1,0 +1,7 @@
+[[section-glossary]]
+==	Glossar
+
+[role="arc42help"]
+****
+Um eine klare und einheitliche Verwendung von Begriffen in allen Dokumenten zu gewährleisten, wurden alle relevanten Begriffe in einem Glossar zusammengefasst. Das Glossar dient als Referenzwerkzeug, um sicherzustellen, dass jeder Begriff eindeutig definiert ist und von allen Beteiligten verstanden wird. Dieses Glossar ist in unserem Manual zu finden.
+****

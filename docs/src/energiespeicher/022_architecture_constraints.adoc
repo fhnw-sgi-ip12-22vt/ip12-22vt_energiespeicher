@@ -1,0 +1,22 @@
+[[section-architecture-constraints]]
+=== Randbedingungen
+
+[role="arc42help"]
+****
+Softwaretechnisch gibt es einige Vorgaben welche von den Fachcoaches getroffen wurden.
+
+****
+[cols="1,1" options="header"]
+|===
+| Randbedingung | Beschreibung
+| Internetverbindung | Das Spiel muss offline spielbar sein.
+| Programmiersprache | Java 11
+| Library | JavaFX, pi4j
+| Webserver | Es werden keine zusätzlichen Webserver verwendet.
+|===
+
+****
+Auch Hardwaretechnisch haben wir Randbedingungen, welche eingehalten werden müssen.
+
+Bei defekten Teilen sollte unbedingt auf unsere verwendete Hardware zurückgegriffen werden, da wir nur mit dieser garantieren können, dass unser Spiel einwandfrei läuft. Siehe dazu in unserem Manual unter #Ressourcen.
+****

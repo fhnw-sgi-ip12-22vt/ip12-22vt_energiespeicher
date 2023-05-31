@@ -1,0 +1,33 @@
+[[section-architecture-components]]
+:stem: latexmath
+
+=== Komponenten
+// Übersicht über die Komponenten und deren Aufgaben (Bausteinsicht)
+****
+Dieses Kapitel bietet eine Übersicht über die Komponenten und deren Aufgaben.
+****
+
+
+==== Button & Events
+****
+Zusammenfassend lässt sich sagen, dass der Ablauf eines Knopfdrucks auf den Event-Button verschiedene Komponenten im System erfordert, die miteinander interagieren, um das Ereignis auszulösen und den Spielverlauf zu steuern. Das Komponentendiagramm zeigt die verschiedenen Komponenten und ihre Beziehungen zueinander auf einen Blick.
+
+image::button_komponentendiagram.png["Komponentendiagramm der Events"]
+
+Folgend ist ein Ablaufdiagramm, welches den Ablauf eines Events darstellt.
+
+image::event_ablaufdiagram.png["Ablaufdiagramm eines Events"]
+
+Die Events besitzen zwei Eigenschaften. [Dauer, Nachricht] Die Dauer gibt an, wie lange das Event dauert. Die Nachricht ist die Nachricht, die dem Gegner angezeigt wird, wenn das Event ausgelöst wird.
+****
+
+==== Potentiometer
+****
+Ein Potentiometer hat einen Wert zwischen 0 - 1. Wenn der aktuelle Wert des Potentiometer beispielsweise bei 0,75 ist, dann liegt der prozentuale Anteil des Potentiometer bei 75%. Dies bedeuted, dass 75% der Energiezufuhr an die Stadt ausgegeben wird. Die restlichen 25% werden in den respektiven Energiespeicher gespeichert.
+
+image::potentiometer_ablaufdiagram.png["Ablaufdiagramm des Potentiometers"]
+
+Folgend ist ein Komponentendiagramm, welches die Zusammenhänge des Potentiometers und unseres Systemes zeigt.
+
+image::drehregler_komponentendiagram.png["Komponentendiagramm des Potentiometers"]
+****

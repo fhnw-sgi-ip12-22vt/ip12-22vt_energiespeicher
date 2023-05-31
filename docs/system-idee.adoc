@@ -1,0 +1,56 @@
+= Systemidee
+Als Grundlage Ihrer Entwurfstätigkeiten sollten Sie eine Vorstellung wichtiger Systemeigenschaften und Anforderungen besitzen und mindestens folgende Fragen über das System beantwortet haben.
+
+== Kernaufgabe des Systems
+****
+Das Raspberry Pi muss über Inputs von vier Potentiometer und zwei Buttons verschiedene LED's und zwei Bildschirme ansteuern. Zwei Spieler bedienen jeweils zwei Potentiometer und ein Button, welche in unserem Fall die Ausgabe auf dem Bildschirm und dem Spielfeld beeinflussen. Anhand von Variablen und einem Algorithmus, wird am Schluss der Spielrunde, ein Gewinner festgelegt.
+
+****
+
+== Kategorie von System
+****
+Das System fällt in die Kategorie des eingebetteten Systems. Wir arbeiten eng zusammen mit dem Raspberry Pi, sowie den Knöpfen und Potentiometer. Geplant ist auch eine Highscoreliste, welche ein Hintergrundsystem sein wird. Diese hat jedoch eine tiefe Priorität.
+****
+
+== Wesentliche Qualitätsanforderungen
+****
+[cols="1,1"]
+|===
+| Merkmal | Beschreibung 
+| Änderbarkeit | Welchen Aufwand erfordert die Durchführung vorgegebener Änderungen an der Software? 
+| Testbarkeit | Das System sollte zu jederzeit getestet werden können.  
+| Benutzbarkeit | Welchen Aufwand fordert der Einsatz der Software von den Benutzern und wie wird er von diesen beurteilt? 
+| Bedienbarkeit | Das System sollte einfach zu bedienen sein für den Benutzer 
+| Erlenbarkeit | Der Benutzer sollte oberflächlich die Energiespeicher mit ihren Stärken & Schwächen durch Spielen kennenlernen. Vertiefte Informationen werden per QR-Code zur Verfügung gestellt. 
+| Verständlichkeit | Der Aufwand um das Spiel zu verstehen sollte so gering wie möglich sein. Kurze Einführung in 2-5 Sätzen, was das Ziel des Spiels ist. 
+| Effizienz | Die Software soll möglichst schnell und effizient auf dem Raspberry Pi laufen. Das Programm muss sparsam im Bezug zu Ressourcen und Rechenzeit erstellt werden. 
+| Funktionalität |  Inwieweit besitzt die Software die geforderten Funktionen? 
+| Sicherheit | Beim Speichern des Highscores muss eine SQL Injektion verhindert werden können. 
+| Richtigkeit | Das System muss die Inputs der Buttons & Potentiometer richtig verarbeiten. 
+| Interopabilität | Das System muss mit dem Raspberry Pi und den Sensoren zusammenarbeiten können. 
+| Zuverlässigkeit | Die Fehlertoleranz sollte bei 0 liegen. Das System muss jederzeit funktionieren. 
+****
+
+== Relevante Stakeholder
+****
+Primeo: Als Kunde von dem Projekt ist Primeo natürlich ein wichtiger Stakeholder von diesem Projekt. Von Ihnen stammt der ursprüngliche Auftrag.
+
+Jugendliche von Sekunderdarschulen: Sie werden der effektive Nutzer des Projektes sein, und das Spielkonzept wird für diese Zielgruppe entworfen.
+
+Kunde der FHNW: Dient als “Vermittler” zwischen Primeo und dem Projektteam. Mit ihm haben wir regelmässige Meetings und bekommen Rückmeldung über den aktuellen Stand.
+
+Projektteam: Die Ideen von dem Projektteam werden schlussendlich umgesetzt. Die Umsetzung des Auftrages liegt bei Ihnen.
+****
+
+== Schnittstellen zu externen Systemen
+****
+Java 17
+
+Testing Framework: [https://junit.org/junit5/](https://junit.org/junit5/)
+
+JavaFX: [https://openjfx.io](https://openjfx.io/)
+
+Raspberry Pi: [https://pi4j.com/](https://pi4j.com/)
+
+Datenbank: SQL Lite [https://github.com/xerial/sqlite-jdbc](https://github.com/xerial/sqlite-jdbc)
+****

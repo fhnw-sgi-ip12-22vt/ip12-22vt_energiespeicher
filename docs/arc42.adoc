@@ -5,6 +5,7 @@
 
 
 // configure DE settings for asciidoc
+ifdef::env-github[]
 include::src/energiespeicher/config.adoc[]
 
 = image:arc42-logo.png[arc42]
@@ -58,3 +59,4 @@ include::src/energiespeicher/04_concepts.adoc[]
 <<<<
 // 5. Glossar
 include::src/energiespeicher/05_glossary.adoc[]
+endif::[]

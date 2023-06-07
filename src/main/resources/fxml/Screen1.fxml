@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="480.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.fhnw.clashofenergiespeicher.controller.ScreenController">
+   <children>
+      <ImageView fx:id="backgroundImageView" fitHeight="480.0" fitWidth="800.0" preserveRatio="true">
+         <image>
+            <Image url="@../img/Background_night.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="186.0" layoutY="274.0" prefHeight="168.0" prefWidth="429.0">
+         <children>
+            <Pane layoutX="-1.0" prefHeight="176.0" prefWidth="435.0" style="-fx-background-color: black; -fx-opacity: 0.3;">
+               <effect>
+                  <DropShadow color="000000" />
+               </effect>
+            </Pane>
+            <Label fx:id="info" alignment="CENTER" layoutX="-1.0" lineSpacing="1.0" prefHeight="176.0" prefWidth="435.0" style="-fx-border-color: black; -fx-border-width: 2;" text="Press Button to start!" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+               <font>
+                  <Font name="System Italic" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="11.0" layoutY="60.0" prefHeight="99.0" prefWidth="184.0" style="-fx-background-color: purple; -fx-opacity: 0.5;">
+         <effect>
+            <DropShadow color="#e540ff" />
+         </effect>
+      </Pane>
+      <Pane layoutX="604.0" layoutY="60.0" prefHeight="99.0" prefWidth="184.0" style="-fx-background-color: purple; -fx-opacity: 0.5;">
+         <effect>
+            <DropShadow color="#e540ff" />
+         </effect>
+      </Pane>
+      <Label layoutX="675.0" layoutY="64.0" text="Day" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentDay" layoutX="689.0" layoutY="114.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Pane layoutX="309.0" layoutY="14.0" prefHeight="99.0" prefWidth="184.0" style="-fx-background-color: red; -fx-opacity: 0.5;">
+         <effect>
+            <DropShadow color="#e540ff" />
+         </effect>
+      </Pane>
+      <Label alignment="CENTER" layoutX="309.0" layoutY="15.0" prefHeight="45.0" prefWidth="184.0" text="Highscore" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="highScore" alignment="CENTER" layoutX="310.0" layoutY="63.0" prefHeight="36.0" prefWidth="184.0" text="0" textFill="#fffefe" textOverrun="CENTER_WORD_ELLIPSIS">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="pointslabel" alignment="CENTER" layoutX="31.0" layoutY="63.0" prefHeight="35.0" prefWidth="138.0" text="Score" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="playerScore" alignment="CENTER" layoutX="34.0" layoutY="113.0" prefHeight="35.0" prefWidth="138.0" style="-fx-opacity: 1;" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="potiLabel2">
+
+      </Label>
+      <ProgressBar fx:id="energyStorageLeft" layoutX="11.0" layoutY="331.0" prefHeight="23.0" prefWidth="184.0" progress="0.0" rotate="270.0" style="-fx-accent: red;" />
+      <ProgressBar fx:id="energyStorageRight" layoutX="604.0" layoutY="331.0" prefHeight="23.0" prefWidth="184.0" progress="0.0" rotate="270.0" style="-fx-accent: red;" />
+      <Label fx:id="pointslabel1" alignment="CENTER" layoutX="1.0" layoutY="197.0" prefHeight="35.0" prefWidth="214.0" text="Kompressor" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="pointslabel11" alignment="CENTER" layoutX="596.0" layoutY="197.0" prefHeight="35.0" prefWidth="204.0" text="Schwungrad" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

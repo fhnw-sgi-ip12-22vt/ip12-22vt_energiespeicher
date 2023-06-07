@@ -211,6 +211,17 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <packageName>ch.fhnw.clashofenergiespeicher</packageName>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>ch.fhnw.clashofenergiespeicher.AppStarter</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <Created-By>Team Energiespeicher</Created-By>
+                        </manifestEntries>
+                    </archive>
                 </configuration>
 
                 <executions>

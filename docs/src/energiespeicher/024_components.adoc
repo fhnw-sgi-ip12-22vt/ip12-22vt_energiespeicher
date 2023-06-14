@@ -31,3 +31,11 @@ Folgend ist ein Komponentendiagramm, welches die Zusammenhänge des Potentiomete
 
 image::drehregler_komponentendiagram.png["Komponentendiagramm des Potentiometers"]
 ****
+
+=== Start des Spieles
+// Übersicht über den Start des Raspberry Pi's und des Spieles
+****
+Dieses Kapitel bietet eine Übersicht über den Start des Raspberry Pi's und des Spieles.
+
+
+****

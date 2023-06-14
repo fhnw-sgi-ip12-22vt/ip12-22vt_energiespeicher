@@ -19,7 +19,6 @@ Mithilfe eines QR Codes gelangt man auf eine Website mit Informationen über die
 [role="arc42help"]
 ****
 
-// TODO -> Diagramm
 image::technischerKontext.jpg["Übersicht über den Technischen Kontext"]
 
 **Potentiometer** +
